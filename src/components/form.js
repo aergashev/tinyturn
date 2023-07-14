@@ -57,7 +57,7 @@ class Form extends React.Component {
       .catch((e) => {});
   };
 
-  //Checks if feild has an error
+  //Checks if field has an error
   hasError = (key) => {
     return this.state.errors.indexOf(key) !== -1;
   };
@@ -79,7 +79,7 @@ class Form extends React.Component {
     if (this.state.longURL.length === 0) {
       errors.push("longURL");
       errorMessages["longURL"] = "Please enter your URL!";
-    } else if (!isWebUri(this.state.longURL)) {
+    } else if (!isWebUrl(this.state.longURL)) {
       errors.push("longURL");
       errorMessages["longURL"] = "Please a URL in the form of https://www....";
     }
@@ -135,7 +135,7 @@ class Form extends React.Component {
     return (
       <div className="container">
         <form autoComplete="off">
-          <h3>Mini Link It!</h3>
+          <h3>Turn into Tiny URL!</h3>
 
           <div className="form-group">
             <label>Enter Your Long URL</label>
@@ -162,7 +162,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="basic-url">Your Mini URL</label>
+            <label htmlFor="basic-url">Your Tiny URL</label>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text">minilinkit.com/</span>
